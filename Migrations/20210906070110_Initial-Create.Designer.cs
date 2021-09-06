@@ -9,7 +9,7 @@ using _08312021_Empite_Co_Solution.Data;
 namespace _08312021_Empite_Co_Solution.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20210831044623_Initial-Create")]
+    [Migration("20210906070110_Initial-Create")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

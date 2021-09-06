@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _08312021_Empite_Co_Solution.Migrations.AppDB
 {
-    public partial class secondCreate : Migration
+    public partial class AppDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

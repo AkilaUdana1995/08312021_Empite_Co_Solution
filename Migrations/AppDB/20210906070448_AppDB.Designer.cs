@@ -10,8 +10,8 @@ using _08312021_Empite_Co_Solution.Data;
 namespace _08312021_Empite_Co_Solution.Migrations.AppDB
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20210831052827_second-Create")]
-    partial class secondCreate
+    [Migration("20210906070448_AppDB")]
+    partial class AppDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
