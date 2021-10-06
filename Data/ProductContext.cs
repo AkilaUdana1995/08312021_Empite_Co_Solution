@@ -20,6 +20,6 @@ namespace _08312021_Empite_Co_Solution.Data
         }
 
 
-        public DbSet<ProductDTOs> iProducts { get; set; }
+        public DbSet<ProductDTOs> MProducts { get; set; }
     }
 }

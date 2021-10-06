@@ -7,27 +7,27 @@ namespace _08312021_Empite_Co_Solution.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "iProducts",
+                name: "MProducts",
                 columns: table => new
                 {
-                    PID = table.Column<int>(type: "int", nullable: false)
+                    ItemCode = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SKU = table.Column<string>(type: "nvarchar(7)", maxLength: 7, nullable: false),
-                    Barcode = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    QTY = table.Column<int>(type: "int", nullable: false),
-                    status = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ItemName = table.Column<string>(type: "nvarchar(7)", maxLength: 7, nullable: false),
+                    UnitofMeasure = table.Column<int>(type: "int", nullable: false),
+                    UnitPrice = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SupplierCode = table.Column<int>(type: "int", nullable: false)
+                    //status = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_iProducts", x => x.PID);
+                    table.PrimaryKey("PK_MProducts", x => x.ItemCode);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "iProducts");
+                name: "MProducts");
         }
     }
 }

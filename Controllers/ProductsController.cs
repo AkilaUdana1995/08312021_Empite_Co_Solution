@@ -22,7 +22,7 @@ namespace _08312021_Empite_Co_Solution.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _context.iProducts.ToListAsync());
+            return View(await _context.MProducts.ToListAsync());
         }
 
         // GET: Products/Details/5
@@ -33,8 +33,8 @@ namespace _08312021_Empite_Co_Solution.Controllers
                 return NotFound();
             }
 
-            var productDTOs = await _context.iProducts
-                .FirstOrDefaultAsync(m => m.PID == id);
+            var productDTOs = await _context.MProducts
+                .FirstOrDefaultAsync(m => m.ItemCode == id);
             if (productDTOs == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace _08312021_Empite_Co_Solution.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PID,SKU,Barcode,Name,QTY,status")] ProductDTOs productDTOs)
+        public async Task<IActionResult> Create([Bind("ItemCode,ItemName,UnitofMeasure,UnitPrice,SupplierCode")] ProductDTOs productDTOs)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace _08312021_Empite_Co_Solution.Controllers
                 return NotFound();
             }
 
-            var productDTOs = await _context.iProducts.FindAsync(id);
+            var productDTOs = await _context.MProducts.FindAsync(id);
             if (productDTOs == null)
             {
                 return NotFound();
@@ -86,9 +86,9 @@ namespace _08312021_Empite_Co_Solution.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PID,SKU,Barcode,Name,QTY,status")] ProductDTOs productDTOs)
+        public async Task<IActionResult> Edit(int id, [Bind("ItemCode,ItemName,UnitofMeasure,UnitPrice,SupplierCode")] ProductDTOs productDTOs)
         {
-            if (id != productDTOs.PID)
+            if (id != productDTOs.ItemCode)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace _08312021_Empite_Co_Solution.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductDTOsExists(productDTOs.PID))
+                    if (!ProductDTOsExists(productDTOs.ItemCode))
                     {
                         return NotFound();
                     }
@@ -124,8 +124,8 @@ namespace _08312021_Empite_Co_Solution.Controllers
                 return NotFound();
             }
 
-            var productDTOs = await _context.iProducts
-                .FirstOrDefaultAsync(m => m.PID == id);
+            var productDTOs = await _context.MProducts
+                .FirstOrDefaultAsync(m => m.ItemCode == id);
             if (productDTOs == null)
             {
                 return NotFound();
@@ -139,15 +139,15 @@ namespace _08312021_Empite_Co_Solution.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var productDTOs = await _context.iProducts.FindAsync(id);
-            _context.iProducts.Remove(productDTOs);
+            var productDTOs = await _context.MProducts.FindAsync(id);
+            _context.MProducts.Remove(productDTOs);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProductDTOsExists(int id)
         {
-            return _context.iProducts.Any(e => e.PID == id);
+            return _context.MProducts.Any(e => e.ItemCode == id);
         }
     }
 }

@@ -11,38 +11,38 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SKU)
+            @Html.DisplayNameFor(model => model.ItemName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SKU)
+            @Html.DisplayFor(model => model.ItemName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Barcode)
+            @Html.DisplayNameFor(model => model.UnitofMeasure)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Barcode)
+            @Html.DisplayFor(model => model.UnitofMeasure)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.UnitPrice)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
+            @Html.DisplayFor(model => model.UnitPrice)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.QTY)
+            @Html.DisplayNameFor(model => model.SupplierCode)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.QTY)
+            @Html.DisplayFor(model => model.SupplierCode)
         </dd>
-        <dt class = "col-sm-2">
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.status)
-        </dt>
-        <dd class = "col-sm-10">
+        </dt>*@
+        @*<dd class = "col-sm-10">
             @Html.DisplayFor(model => model.status)
-        </dd>
+        </dd>*@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.PID">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.ItemCode">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

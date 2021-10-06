@@ -9,23 +9,23 @@ namespace _08312021_Empite_Co_Solution.Models
     public class ProductDTOs
     {
         [Key]
-        public int PID { get; set; }
+        public int ItemCode { get; set; }
 
         [Required(ErrorMessage = "This is Mandatory")]
-        [MaxLength(7)]
-        public string SKU { get; set; }
+        [MaxLength(15)]
+        public string ItemName { get; set; }
 
         [Required(ErrorMessage = "please eneter barcode")]
-        public int Barcode { get; set; }
+        public string UnitofMeasure { get; set; }
 
         [Required(ErrorMessage = "required")]
-        public string Name { get; set; }
+        public string UnitPrice { get; set; }
 
 
         [Required(ErrorMessage = "required")]
-        public int QTY { get; set; }
+        public int SupplierCode { get; set; }
 
-        public string status { get; set; }
+        // string status { get; set; }
     }
 
  

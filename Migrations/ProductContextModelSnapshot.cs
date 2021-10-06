@@ -20,32 +20,32 @@ namespace _08312021_Empite_Co_Solution.Migrations
 
             modelBuilder.Entity("_08312021_Empite_Co_Solution.Models.ProductDTOs", b =>
                 {
-                    b.Property<int>("PID")
+                    b.Property<int>("ItemCode")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Barcode")
+                    b.Property<int>("SupplierCode")
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("UnitPrice")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("QTY")
                         .HasColumnType("int");
 
-                    b.Property<string>("SKU")
+                    b.Property<string>("ItemName")
                         .IsRequired()
                         .HasMaxLength(7)
                         .HasColumnType("nvarchar(7)");
 
-                    b.Property<string>("status")
-                        .HasColumnType("nvarchar(max)");
+                    //b.Property<string>("status")
+                    //    .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PID");
+                    b.HasKey("ItemCode");
 
-                    b.ToTable("iProducts");
+                    b.ToTable("MProducts");
                 });
 #pragma warning restore 612, 618
         }
