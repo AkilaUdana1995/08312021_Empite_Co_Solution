@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using _08312021_Empite_Co_Solution.Data;
+using _08312021_Empite_Co_Solution.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using _08312021_Empite_Co_Solution.Data;
-using _08312021_Empite_Co_Solution.Models;
 
 namespace _08312021_Empite_Co_Solution.Controllers
 {

@@ -16,7 +16,7 @@ namespace _08312021_Empite_Co_Solution.Migrations
                     UnitofMeasure = table.Column<int>(type: "int", nullable: false),
                     UnitPrice = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SupplierCode = table.Column<int>(type: "int", nullable: false)
-                    //status = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    
                 },
                 constraints: table =>
                 {
